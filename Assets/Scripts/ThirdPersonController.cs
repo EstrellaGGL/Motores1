@@ -46,24 +46,24 @@ namespace StarterAssets
         [Tooltip("Time required to pass before being able to jump again. Set to 0f to instantly jump again")]
         public float JumpTimeout = 0.50f;
 
-        private void OnTriggerEnter(Collider collision)
+        private void OnTriggerEnter(Collider collision) // Si entran en colision con un Trigger
         {
-            if (collision.gameObject.CompareTag("LongJump"))
+            if (collision.gameObject.CompareTag("LongJump")) // Si el objeto tiene el tag LongJump
             {
-                JumpHeight = 2.6f;
+                JumpHeight = 2.6f;                          // Modifica la altura de salto y destruye el objeto con el que colisionó
                 Destroy(collision.gameObject);
             }
 
-            if (collision.gameObject.CompareTag("Egg"))
+            if (collision.gameObject.CompareTag("Egg")) // Si colisiona con un objeto con el tag Egg
             {
-                collision.transform.SetParent(BackObjectPosition);
+                collision.transform.SetParent(BackObjectPosition); // Lo pone de hijo en el objeto vacio BackObjectPosition
 
                 collision.transform.localPosition = Vector3.zero;
                 collision.transform.localRotation = Quaternion.identity;
             }
-            if (collision.gameObject.CompareTag("Shrink"))
+            if (collision.gameObject.CompareTag("Shrink")) // Si colisiona con un objeto Shrink
             {
-                _canShrink = true;
+                _canShrink = true;                          // Cambia el bool a verdadero y destruye el objeto con el que colisionó
                 Destroy(collision.gameObject);
             }
         }
