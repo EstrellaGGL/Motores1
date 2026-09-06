@@ -46,8 +46,98 @@ namespace StarterAssets
         [Tooltip("Time required to pass before being able to jump again. Set to 0f to instantly jump again")]
         public float JumpTimeout = 0.50f;
 
+        private void OnTriggerEnter(Collider collision)
+        {
+            if (collision.gameObject.CompareTag("LongJump"))
+            {
+                JumpHeight = 2.6f;
+                Destroy(collision.gameObject);
+            }
+
+            if (collision.gameObject.CompareTag("Egg"))
+            {
+                collision.transform.SetParent(BackObjectPosition);
+
+                collision.transform.localPosition = Vector3.zero;
+                collision.transform.localRotation = Quaternion.identity;
+            }
+            if (collision.gameObject.CompareTag("Shrink"))
+            {
+                _canShrink = true;
+                Destroy(collision.gameObject);
+            }
+        }
+
+
         [Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
         public float FallTimeout = 0.15f;
+
+        [SerializeField] private Transform BackObjectPosition;
+
+        [Header("Shrink PowerUp")]
+        [SerializeField] private Transform PlayerModel;
+        [SerializeField] private float ShrinkMultiplier = 0.25f;
+
+        private bool _canShrink = false;
+        private bool _isShrunk = false;
+        private Vector3 _originalModelScale;
+        private float _originalControllerHeight;
+        private float _originalControllerRadius;
+        private Vector3 _originalControllerCenter;
+
+        private void Shrink()
+        {
+            if (!_canShrink)
+                return;
+
+            bool shrinkPressed = _playerInput.actions["Shrink"].IsPressed();
+
+            _animator.SetBool(_animIDShrink, shrinkPressed);
+
+            if (shrinkPressed)
+            {
+                if (!_isShrunk)
+                {
+                    _isShrunk = true;
+
+                    // Hacer pequeño el CharacterController
+                    float newHeight = _originalControllerHeight * ShrinkMultiplier;
+                    float newRadius = _originalControllerRadius * ShrinkMultiplier;
+
+                    float originalBottom = _originalControllerCenter.y - (_originalControllerHeight / 2f);
+
+                    _controller.height = newHeight;
+                    _controller.radius = newRadius;
+
+                    // Mantener los pies en el mismo lugar
+                    Vector3 newCenter = _originalControllerCenter;
+                    newCenter.y = originalBottom + (newHeight / 2f);
+
+                    _controller.center = newCenter;
+                }
+
+                // Mantener el modelo pequeño mientras estamos encogidos
+                if (_isShrunk && _animator.GetCurrentAnimatorStateInfo(0).IsName("Small Idle Walk Run Blend"))
+                {
+                    PlayerModel.localScale = _originalModelScale * ShrinkMultiplier;
+                }
+            }
+            else
+            {
+                if (_isShrunk)
+                {
+                    _isShrunk = false;
+
+                    // Restaurar modelo
+                    PlayerModel.localScale = _originalModelScale;
+
+                    // Restaurar CharacterController
+                    _controller.height = _originalControllerHeight;
+                    _controller.radius = _originalControllerRadius;
+                    _controller.center = _originalControllerCenter;
+                }
+            }
+        }
 
         [Header("Player Grounded")]
         [Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
@@ -100,6 +190,7 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private int _animIDShrink;
 
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
@@ -141,6 +232,11 @@ namespace StarterAssets
 
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
+            _originalModelScale = PlayerModel.localScale;
+
+            _originalControllerHeight = _controller.height;
+            _originalControllerRadius = _controller.radius;
+            _originalControllerCenter = _controller.center;
             _input = GetComponent<StarterAssetsInputs>();
 #if ENABLE_INPUT_SYSTEM 
             _playerInput = GetComponent<PlayerInput>();
@@ -162,6 +258,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            Shrink();
         }
 
         private void LateUpdate()
@@ -176,7 +273,9 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            _animIDShrink = Animator.StringToHash("Shrink");
         }
+
 
         private void GroundedCheck()
         {
