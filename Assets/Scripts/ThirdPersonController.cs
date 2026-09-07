@@ -53,6 +53,12 @@ namespace StarterAssets
                 JumpHeight = 2.6f;                          // Modifica la altura de salto y destruye el objeto con el que colisionó
                 Destroy(collision.gameObject);
             }
+            if (collision.gameObject.CompareTag("DoubleJump")) // Detecta el trigger del power up y destruye el gameobject
+            {
+                doubleJumpUnlocked = true;
+                Destroy(collision.gameObject);
+                Debug.Log("DOBLE SALTO CONSEGUIDO!!!");
+            }
 
             if (collision.gameObject.CompareTag("Egg")) // Si colisiona con un objeto con el tag Egg
             {
@@ -177,11 +183,11 @@ namespace StarterAssets
         private float _animationBlend;
         private float _targetRotation = 0.0f;
         private float _rotationVelocity;
-        private float _verticalVelocity;
-        private float _terminalVelocity = 53.0f;
+        private float _verticalVelocity; 
+        private float _terminalVelocity = 53.0f; 
 
         // timeout deltatime
-        private float _jumpTimeoutDelta;
+        private float _jumpTimeoutDelta; 
         private float _fallTimeoutDelta;
 
         // animation IDs
@@ -198,6 +204,7 @@ namespace StarterAssets
         private Animator _animator;
         private CharacterController _controller;
         private StarterAssetsInputs _input;
+         
         private GameObject _mainCamera;
 
         private const float _threshold = 0.01f;
@@ -251,14 +258,16 @@ namespace StarterAssets
             _fallTimeoutDelta = FallTimeout;
         }
 
-        private void Update()
+        private void Update() 
         {
             _hasAnimator = TryGetComponent(out _animator);
 
-            JumpAndGravity();
             GroundedCheck();
+            JumpAndGravity();
+            DoubleJump();
             Move();
             Shrink();
+            
         }
 
         private void LateUpdate()
@@ -439,8 +448,17 @@ namespace StarterAssets
                     }
                 }
 
-                // if we are not grounded, do not jump
-                _input.jump = false;
+                /// -------------ATENCION-----------
+                /// Aca abajo originalmente terminaba en _input.jump = false; ... Le puse el IF porque al agarrar el doble jump, sin el IF quedaba
+                /// saltando todo el tiempo por algun bug debido a que 2 funciones iban a querer controlar lo mismo.
+                ///Ahora si el doublejump esta unlocked, bloquea el input desde aca y ahora lo maneja el doblejump
+
+
+
+                if (!doubleJumpUnlocked)
+                {
+                    _input.jump = false;
+                }
             }
 
             // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
@@ -491,6 +509,37 @@ namespace StarterAssets
                     LandingAudio.Play();
 
             }
+        }
+
+        // Intento de Doble Salto
+
+
+        [SerializeField] private int maxJumps = 2; // Maximo de saltos.
+        private int jumpsRemaining; // Saltos restantes para el contador.
+        [SerializeField] private bool doubleJumpUnlocked = false; // El booleano que me activa o no el power up
+        private void DoubleJump()
+        {
+            if (!doubleJumpUnlocked) // Aca se fija primero si ya agarre el power up
+                return;
+
+
+            if (Grounded)
+            {
+                jumpsRemaining = maxJumps;
+            }
+
+            if (!Grounded && _input.jump && jumpsRemaining > 0) // Esto chequea el contador de saltos disponibles
+            {
+                
+                _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity); // Misma caracteristica que el salto normal
+
+                
+                jumpsRemaining--; // Resta el salto consumido
+
+               
+                _input.jump = false;  // Consumimos el input para evitar que siga saltando.
+            }
+
         }
     }
 }
