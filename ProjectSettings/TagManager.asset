@@ -8,6 +8,7 @@ TagManager:
   - LongJump
   - Egg
   - Shrink
+  - DoubleJump
   layers:
   - Default
   - TransparentFX

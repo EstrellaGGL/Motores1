@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     float startTime;
     float finalTime;
-    public MoverPersonaje player;
+    //public MoverPersonaje player;
 
     void Start()
     {
