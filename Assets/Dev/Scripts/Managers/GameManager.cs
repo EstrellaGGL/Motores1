@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        
         PlayerPrefs.SetInt("LastLevel", SceneManager.GetActiveScene().buildIndex);
         Debug.Log("INICIA EL JUEGO!");
         startTime = Time.time;
