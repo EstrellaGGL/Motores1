@@ -60,8 +60,8 @@ public class MenuManager : MonoBehaviour
 
     public void Return()
     {
-        Debug.Log("Click VOLVER");
-        SceneManager.LoadScene("MainMenu");
+        Debug.Log("Click MAIN");
+        SceneManager.LoadScene("Main");
     }
 
 
