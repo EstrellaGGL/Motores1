@@ -8,15 +8,16 @@ TagManager:
   - LongJump
   - Egg
   - Shrink
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
+  - Platform
+  - Shrink
   - 
   - 
   - 

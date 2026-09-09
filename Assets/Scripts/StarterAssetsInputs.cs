@@ -13,7 +13,7 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
-		public bool shrink;
+		public bool shrink; // Booleano publico de encogerse
 
         [Header("Movement Settings")]
 		public bool analogMovement;
@@ -47,7 +47,7 @@ namespace StarterAssets
 		}
         public void OnShrink(InputValue value)
         {
-            ShrinkInput(value.isPressed);
+            ShrinkInput(value.isPressed); // Revisa si la tecla de encogerse esta presionada
         }
 #endif
 
@@ -73,7 +73,7 @@ namespace StarterAssets
 		}
         public void ShrinkInput(bool newShrinkState)
         {
-            shrink = newShrinkState;
+            shrink = newShrinkState; // Asigna el valor del booleano a shrink
 		}
         private void OnApplicationFocus(bool hasFocus)
 		{
