@@ -9,6 +9,7 @@ TagManager:
   - Egg
   - Shrink
   - MovingPlatform
+  - DoubleJump
   layers:
   - Default
   - TransparentFX

@@ -55,6 +55,12 @@ namespace StarterAssets
                 JumpHeight = 2.6f;                          // Modifica la altura de salto y destruye el objeto con el que colisionó
                 Destroy(collision.gameObject);
             }
+            if (collision.gameObject.CompareTag("DoubleJump")) // Detecta el trigger del power up y destruye el gameobject
+            {
+                doubleJumpUnlocked = true;
+                Destroy(collision.gameObject);
+                UnityEngine.Debug.Log("DOBLE SALTO CONSEGUIDO!!!");
+            }
 
             if (collision.gameObject.CompareTag("Egg")) // Si colisiona con un objeto con el tag Egg
             {
@@ -87,7 +93,33 @@ namespace StarterAssets
         private float _originalControllerRadius;
         private Vector3 _originalControllerCenter;
         public bool _inShrinkZone = false;
+        [SerializeField] private int maxJumps = 2; // Maximo de saltos.
+        private int jumpsRemaining; // Saltos restantes para el contador.
+        [SerializeField] private bool doubleJumpUnlocked = false; // El booleano que me activa o no el power up
+        private void DoubleJump()
+        {
+            if (!doubleJumpUnlocked) // Aca se fija primero si ya agarre el power up
+                return;
 
+
+            if (Grounded)
+            {
+                jumpsRemaining = maxJumps;
+            }
+
+            if (!Grounded && _input.jump && jumpsRemaining > 0) // Esto chequea el contador de saltos disponibles
+            {
+
+                _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity); // Misma caracteristica que el salto normal
+
+
+                jumpsRemaining--; // Resta el salto consumido
+
+
+                _input.jump = false;  // Consumimos el input para evitar que siga saltando.
+            }
+
+        }
         private void Shrink()
         {
             
@@ -319,7 +351,7 @@ namespace StarterAssets
             GroundedCheck();
             Shrink(); // Método de encogerse
             Move();
-            
+            DoubleJump();
         }
         private void LateUpdate()
         {
@@ -499,9 +531,11 @@ namespace StarterAssets
                         _animator.SetBool(_animIDFreeFall, true);
                     }
                 }
-
-                // if we are not grounded, do not jump
-                _input.jump = false;
+                
+                if (!doubleJumpUnlocked) //Ahora si el doublejump esta unlocked, bloquea el input desde aca y ahora lo maneja el doblejump
+                {
+                    _input.jump = false;
+                }
             }
 
             // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
