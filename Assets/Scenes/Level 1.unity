@@ -4865,7 +4865,7 @@ GameObject:
   - component: {fileID: 109246695}
   - component: {fileID: 109246694}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Power-Up Double Jump
   m_TagString: DoubleJump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5200,11 +5200,11 @@ Transform:
   m_GameObject: {fileID: 109246693}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.4685, y: 38.241, z: 1.0270001}
+  m_LocalPosition: {x: 4.4685, y: 38.241, z: 1.0250001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 197730782}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &119202976
 Mesh:
@@ -8545,7 +8545,6 @@ Transform:
   - {fileID: 293063417}
   - {fileID: 171332812}
   - {fileID: 75522554}
-  - {fileID: 598675309}
   - {fileID: 1986416273}
   - {fileID: 149926111}
   - {fileID: 1953724341}
@@ -8658,7 +8657,6 @@ Transform:
   - {fileID: 1815224850}
   - {fileID: 1172448735}
   - {fileID: 1381975500}
-  - {fileID: 109246699}
   - {fileID: 592452930}
   - {fileID: 1150060524}
   - {fileID: 1874384419}
@@ -8681,7 +8679,6 @@ Transform:
   - {fileID: 733223431}
   - {fileID: 1544690141}
   - {fileID: 2111100848}
-  - {fileID: 539599838}
   - {fileID: 1286271214}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23239,7 +23236,7 @@ GameObject:
   - component: {fileID: 539599833}
   - component: {fileID: 539599839}
   m_Layer: 0
-  m_Name: Cube (22)
+  m_Name: Shrine (Win)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23574,11 +23571,11 @@ Transform:
   m_GameObject: {fileID: 539599832}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.000000117375315, w: 1}
-  m_LocalPosition: {x: -5.4798317, y: 95.63501, z: 1.4959866}
+  m_LocalPosition: {x: -5.4798317, y: 95.63501, z: 1.4939866}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 197730782}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &539599839
 MonoBehaviour:
@@ -29887,7 +29884,7 @@ GameObject:
   - component: {fileID: 598675305}
   - component: {fileID: 598675304}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Egg
   m_TagString: Egg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32164,11 +32161,11 @@ Transform:
   m_GameObject: {fileID: 598675303}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.0212636, y: 6.6650004, z: -4.089213}
+  m_LocalPosition: {x: 5.0212636, y: 6.6650004, z: -4.0912127}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 197730782}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &610345207
 GameObject:
@@ -119146,8 +119143,11 @@ SceneRoots:
   - {fileID: 203844589}
   - {fileID: 197730782}
   - {fileID: 832963690425676122}
+  - {fileID: 598675309}
   - {fileID: 1233336966}
   - {fileID: 1816283597}
+  - {fileID: 109246699}
+  - {fileID: 539599838}
   - {fileID: 535059815}
   - {fileID: 636582420}
   - {fileID: 711429944}
