@@ -117718,6 +117718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shrine (Win)
       objectReference: {fileID: 0}
+    - target: {fileID: 8391573634783412585, guid: fd8fe955a664d4c44a9afc3137c7cc03, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -117782,6 +117786,10 @@ PrefabInstance:
     - target: {fileID: 2824530773449480887, guid: 0fb098b0bf905b441bc51945b500ce75, type: 3}
       propertyPath: m_Name
       value: Power-Up Double Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824530773449480887, guid: 0fb098b0bf905b441bc51945b500ce75, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5198115251425574132, guid: 0fb098b0bf905b441bc51945b500ce75, type: 3}
       propertyPath: m_Mesh
@@ -117940,7 +117948,14 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig6:Hips'\n\tTransform 'mixamorig6:LeftHandIndex1'\n\tTransform
+    'mixamorig6:RightForeArm'\n\tTransform 'mixamorig6:Neck'\n\tTransform 'RightHandThumb3'\n\tTransform
+    'mixamorig6:RightHandMiddle2'\n\tTransform 'mixamorig6:RightToeBase'\n\tTransform
+    'mixamorig6:RightHandMiddle3'\n\tTransform 'mixamorig6:LeftHandPinky2'\n\tTransform
+    'mixamorig6:LeftToeBase'\n\tand more ...\n\tFrom animation clip 'Anim_Salto_Mixamo'\n\tFrom
+    animation clip 'Anim_Salto_Mixamo'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -118630,6 +118645,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp-Shrink
       objectReference: {fileID: 0}
+    - target: {fileID: 2334163424465069902, guid: 6337576fbde6b8a4bab5b63d129b09ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4184362395383909383, guid: 6337576fbde6b8a4bab5b63d129b09ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.4635
@@ -119126,6 +119145,10 @@ PrefabInstance:
     - target: {fileID: 8032572151290574125, guid: 0c1e277c8b4a7f24fb6716acca14828e, type: 3}
       propertyPath: m_Name
       value: PowerUp-LongJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032572151290574125, guid: 0c1e277c8b4a7f24fb6716acca14828e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
