@@ -13,6 +13,7 @@
   <Project Path="Unity.VisualScripting.Flow.Editor.csproj" />
   <Project Path="Unity.ProBuilder.Csg.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+<<<<<<< Updated upstream
   <Project Path="Unity.VisualStudio.Editor.csproj" />
   <Project Path="Unity.InputSystem.csproj" />
   <Project Path="Unity.Searcher.Editor.csproj" />
@@ -45,4 +46,7 @@
   <Project Path="Unity.ProBuilder.Stl.csproj" />
   <Project Path="Unity.VisualScripting.DocCodeExamples.csproj" />
   <Project Path="Unity.Collections.Editor.csproj" />
+=======
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+>>>>>>> Stashed changes
 </Solution>
