@@ -19,9 +19,13 @@ public class HealthSystem : MonoBehaviour
 
     void Update()
     {
-        // Estrategia inicial: El tiempo consume vida de forma independiente (ej: 2 puntos por segundo)
-        TakeDamage(2f * Time.deltaTime);
+        // 10 minutos = 600 segundos. 
+        // Dividimos maxHealth (100) por 600 para vaciar la barra de forma exacta en ese tiempo.
+        float damagePerSecond = maxHealth / 600f;
+
+        TakeDamage(damagePerSecond * Time.deltaTime);
     }
+
 
     public void TakeDamage(float amount)
     {
@@ -53,4 +57,11 @@ public class HealthSystem : MonoBehaviour
             gameManager.Lose(); // Reutiliza la lógica de derrota actual de tu proyecto
         }
     }
+    // Fuerza la muerte instantánea en la UI antes de que cambie la escena
+    public void ForceInstantDeathUI()
+    {
+        currentHealth = 0f;
+        NotificarCambioVida();
+    }
+
 }
