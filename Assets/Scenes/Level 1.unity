@@ -24836,7 +24836,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 51.8
+  m_Value: 56.7
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -93149,6 +93149,8 @@ MonoBehaviour:
   huevoAgrietado: {fileID: 2122548375, guid: abb6fff95472a4d43ab1bcab8e94c839, type: 3}
   huevoRoto: {fileID: -1143688796, guid: abb6fff95472a4d43ab1bcab8e94c839, type: 3}
   vidaMaxima: 100
+  danioPorSegundo: 0.1666
+  disminuirPorTiempo: 1
 --- !u!43 &1822916798
 Mesh:
   m_ObjectHideFlags: 0
@@ -98176,7 +98178,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.518
+  m_FillAmount: 0.56700003
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

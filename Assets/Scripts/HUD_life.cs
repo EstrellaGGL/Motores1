@@ -9,12 +9,17 @@ public class HUD_life : MonoBehaviour
 
     [Header("Sprites del Huevo (Estados)")]
     public Sprite huevoSaludable; // Carita feliz original
-    public Sprite huevoAgrietado;  // Carita preocupada o rota
+    public Sprite huevoAgrietado;  // Carita preocupada
     public Sprite huevoRoto;       // Carita de derrota
 
     [Header("Configuración de Vida")]
     public float vidaMaxima = 100f;
     private float vidaActual;
+
+    [Header("Mecánica de Tiempo")]
+    [Tooltip("Cantidad de vida que pierde el jugador por cada segundo que pasa")]
+    public float danioPorSegundo = 5f;
+    public bool disminuirPorTiempo = true;
 
     void Start()
     {
@@ -27,7 +32,17 @@ public class HUD_life : MonoBehaviour
         ActualizarExpresionHuevo();
     }
 
-    // Cualquier peligro del mapa llamará a esta función modular
+    void Update()
+    {
+        // Si la opción está activa y el personaje sigue vivo, descuenta vida por segundo
+        if (disminuirPorTiempo && vidaActual > 0)
+        {
+            // Usamos Time.deltaTime para que reste de forma suave y constante sin importar los FPS
+            ModificarVida(-danioPorSegundo * Time.deltaTime);
+        }
+    }
+
+    // Mantenemos la función pública por si a futuro decidimos implementar usar pociones o curaciones
     public void ModificarVida(float cantidad)
     {
         vidaActual += cantidad;
@@ -42,7 +57,9 @@ public class HUD_life : MonoBehaviour
 
         if (vidaActual <= 0)
         {
-            Debug.Log("Personaje derrotado. Disparar lógica de Mixamo / Respawn.");
+            Debug.Log("El personaje se quedó sin vida por tiempo.");
+            disminuirPorTiempo = false; // Frenamos el contador al morir
+            // Aquí se disparará el Game Over o el Respawn
         }
     }
 
