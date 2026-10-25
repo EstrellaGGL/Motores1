@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b16feee6b979c944c8b11aa822352150
+timeCreated: 1531979257
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127924
+  packageName: AI cartoon butterflies
+  packageVersion: 2.0
+  assetPath: Assets/AI cartoon butterflies/AI cartoon butterflies/Models/Butterflies/Materials/butterfly_6.mat
+  uploadId: 634993

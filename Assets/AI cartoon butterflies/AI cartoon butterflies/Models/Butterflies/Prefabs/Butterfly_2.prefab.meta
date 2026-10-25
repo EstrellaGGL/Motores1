@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f6d0e118c43d4df4bbb433df1631de76
+timeCreated: 1533032587
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127924
+  packageName: AI cartoon butterflies
+  packageVersion: 2.0
+  assetPath: Assets/AI cartoon butterflies/AI cartoon butterflies/Models/Butterflies/Prefabs/Butterfly_2.prefab
+  uploadId: 634993

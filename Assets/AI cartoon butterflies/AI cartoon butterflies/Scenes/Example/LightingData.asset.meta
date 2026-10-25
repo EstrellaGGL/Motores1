@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d33d213f55079384282863cd6b381db6
+timeCreated: 1533042246
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 25800000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127924
+  packageName: AI cartoon butterflies
+  packageVersion: 2.0
+  assetPath: Assets/AI cartoon butterflies/AI cartoon butterflies/Scenes/Example/LightingData.asset
+  uploadId: 634993
