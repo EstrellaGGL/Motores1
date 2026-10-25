@@ -15801,6 +15801,7 @@ GameObject:
   - component: {fileID: 373114876}
   - component: {fileID: 373114875}
   - component: {fileID: 373114874}
+  - component: {fileID: 373114878}
   m_Layer: 0
   m_Name: Companion_PlaceHolder
   m_TagString: Untagged
@@ -15896,13 +15897,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373114873}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.894, y: 31.266, z: -0.839}
-  m_LocalScale: {x: -0.15, y: 0.15, z: 0.15}
+  m_LocalRotation: {x: -0, y: -0.9659252, z: -0, w: 0.25882143}
+  m_LocalPosition: {x: -0.053, y: 2.026, z: -9.457}
+  m_LocalScale: {x: -0.15000004, y: 0.15, z: 0.15000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 832963690425676122}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &373114878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373114873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ebb1f2402f21244983231e236ab7fe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CompanionFollow
+  playerTarget: {fileID: 1165126725857106736}
+  velocidad: 5
+  offset: {x: -0.15, y: 1.65, z: -0.4}
 --- !u!43 &375225899
 Mesh:
   m_ObjectHideFlags: 0
@@ -116482,7 +116498,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1165126725857106736}
-  - {fileID: 373114877}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -150, z: 0}
 --- !u!4 &838629647383939394
@@ -119760,6 +119775,7 @@ SceneRoots:
   - {fileID: 2111235635}
   - {fileID: 71357884}
   - {fileID: 197730782}
+  - {fileID: 373114877}
   - {fileID: 832963690425676122}
   - {fileID: 598675309}
   - {fileID: 8501546491634654985}
