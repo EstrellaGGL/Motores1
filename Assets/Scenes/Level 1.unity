@@ -20116,6 +20116,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 197730782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &476685054
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 598793700065674895, guid: 577cb2972baf717469b74a59ea0f8987, type: 3}
+      propertyPath: playerTarget
+      value: 
+      objectReference: {fileID: 1165126725857106736}
+    - target: {fileID: 1190492151367908210, guid: 577cb2972baf717469b74a59ea0f8987, type: 3}
+      propertyPath: m_Name
+      value: Companion_PlaceHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877089751265115232, guid: 577cb2972baf717469b74a59ea0f8987, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.55417
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877089751265115232, guid: 577cb2972baf717469b74a59ea0f8987, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.95603
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877089751265115232, guid: 577cb2972baf717469b74a59ea0f8987, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.9395
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877089751265115232, guid: 577cb2972baf717469b74a59ea0f8987, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.25882143
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877089751265115232, guid: 577cb2972baf717469b74a59ea0f8987, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877089751265115232, guid: 577cb2972baf717469b74a59ea0f8987, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9659252
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877089751265115232, guid: 577cb2972baf717469b74a59ea0f8987, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877089751265115232, guid: 577cb2972baf717469b74a59ea0f8987, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877089751265115232, guid: 577cb2972baf717469b74a59ea0f8987, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877089751265115232, guid: 577cb2972baf717469b74a59ea0f8987, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 577cb2972baf717469b74a59ea0f8987, type: 3}
 --- !u!1 &482290985
 GameObject:
   m_ObjectHideFlags: 0
@@ -116686,15 +116747,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 438817947724339014, guid: 8611c3670ee639a44a178576811ebd72, type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'mixamorig6:Hips'\n\tTransform 'mixamorig6:LeftHandIndex1'\n\tTransform
-        'mixamorig6:RightForeArm'\n\tTransform 'mixamorig6:Neck'\n\tTransform 'RightHandThumb3'\n\tTransform
-        'mixamorig6:RightHandMiddle2'\n\tTransform 'mixamorig6:RightToeBase'\n\tTransform
-        'mixamorig6:RightHandMiddle3'\n\tTransform 'mixamorig6:LeftHandPinky2'\n\tTransform
-        'mixamorig6:LeftToeBase'\n\tand more ...\n\tFrom animation clip 'PowerUp1'\n\tFrom
-        animation clip 'PowerUp2'\n\tFrom animation clip 'PowerUp3'\n\tFrom animation
-        clip 'PowerUp4'"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1221826387584991007, guid: 8611c3670ee639a44a178576811ebd72, type: 3}
       propertyPath: powerUpAnimation
@@ -117178,6 +117231,7 @@ SceneRoots:
   - {fileID: 71357884}
   - {fileID: 197730782}
   - {fileID: 832963690425676122}
+  - {fileID: 476685054}
   - {fileID: 598675309}
   - {fileID: 8501546491634654985}
   - {fileID: 6650834544893320975}

@@ -17,9 +17,6 @@ namespace StarterAssets
     public class ThirdPersonController : MonoBehaviour
     {
         [Header("Player")]
-
-        [SerializeField] private PowerUpAnimation powerUpAnimation;
-
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
 
@@ -55,21 +52,17 @@ namespace StarterAssets
         {
             if (collision.gameObject.CompareTag("LongJump")) // Si el objeto tiene el tag LongJump
             {
-                powerUpAnimation.PlayRandomPowerUp();
                 JumpHeight = 2.6f;                          // Modifica la altura de salto y destruye el objeto con el que colisionó
                 Destroy(collision.gameObject);
             }
             if (collision.gameObject.CompareTag("DoubleJump")) // Detecta el trigger del power up y destruye el gameobject
             {
-                powerUpAnimation.PlayRandomPowerUp();
-                
                 doubleJumpUnlocked = true;
                 Destroy(collision.gameObject);
             }
 
             if (collision.gameObject.CompareTag("Egg")) // Si colisiona con un objeto con el tag Egg
             {
-                powerUpAnimation.PlayRandomPowerUp();
                 collision.transform.SetParent(BackObjectPosition); // Lo pone de hijo en el objeto vacio BackObjectPosition
 
                 collision.transform.localPosition = Vector3.zero;
@@ -77,7 +70,6 @@ namespace StarterAssets
             }
             if (collision.gameObject.CompareTag("Shrink")) // Si colisiona con un objeto Shrink
             {
-                powerUpAnimation.PlayRandomPowerUp();
                 _canShrink = true;                          // Cambia el bool a verdadero y destruye el objeto con el que colisionó
                 Destroy(collision.gameObject);
             }
@@ -353,14 +345,8 @@ namespace StarterAssets
         private void Update()
         {
             _hasAnimator = TryGetComponent(out _animator);
-
-            if (powerUpAnimation != null &&
-                powerUpAnimation.IsPlayingPowerUp) // Para que no se mueva cuando hace animaciones de powerUp
-                {
-                    return;
-                }
-
-
+            
+            
             JumpAndGravity();
             GroundedCheck();
             Shrink(); // Método de encogerse
