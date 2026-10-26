@@ -10,6 +10,7 @@ TagManager:
   - Shrink
   - MovingPlatform
   - DoubleJump
+  - Water
   layers:
   - Default
   - TransparentFX
