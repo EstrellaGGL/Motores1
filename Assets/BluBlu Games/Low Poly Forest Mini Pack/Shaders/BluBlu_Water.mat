@@ -53,7 +53,11 @@ Material:
     m_Floats:
     - _AbsorptionCoefficient: 0
     - _Depth: 0
+<<<<<<< Updated upstream
     - _FoamAmount: 1
+=======
+    - _FoamAmount: 0.1
+>>>>>>> Stashed changes
     - _FoatCutOff: 1
     - _QueueControl: 0
     - _QueueOffset: 0
