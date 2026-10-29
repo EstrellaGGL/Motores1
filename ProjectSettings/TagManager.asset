@@ -10,6 +10,8 @@ TagManager:
   - Shrink
   - MovingPlatform
   - DoubleJump
+  - Water
+  - Dancer
   layers:
   - Default
   - TransparentFX
