@@ -11,6 +11,7 @@ TagManager:
   - MovingPlatform
   - DoubleJump
   - Water
+  - Dancer
   layers:
   - Default
   - TransparentFX
