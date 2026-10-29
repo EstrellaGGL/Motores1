@@ -140,7 +140,7 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _Float: 0.3
-    - _FoamAmount: 2.58
+    - _FoamAmount: 1.37
     - _FoatCutOff: 7.98
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -177,13 +177,13 @@ Material:
     - Color_1DEAAAEB: {r: 1, g: 1, b: 1, a: 1}
     - Color_51316B18: {r: 0.15400907, g: 0.05882349, b: 0.5960785, a: 0}
     - Color_B3D1197F: {r: 0.44495368, g: 0.9339623, b: 0.9146175, a: 0.8235294}
-    - _AbsorptionColor: {r: 0.2735849, g: 0.033259343, b: 0, a: 1}
+    - _AbsorptionColor: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamColor: {r: 0.8066038, g: 0.93408555, b: 1, a: 0.45490196}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.22745098}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Vector2: {r: 10, g: 10, b: 0, a: 0}
-    - _WaterColor: {r: 0.32941175, g: 0.6992154, b: 0.9607843, a: 0}
+    - _WaterColor: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
