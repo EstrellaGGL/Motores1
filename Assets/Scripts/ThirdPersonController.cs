@@ -360,6 +360,11 @@ namespace StarterAssets
                     return;
                 }
 
+            if (_animator.GetCurrentAnimatorStateInfo(1).IsName("Dance"))
+            {
+                return;
+            }
+
 
             JumpAndGravity();
             GroundedCheck();
