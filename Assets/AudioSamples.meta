@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 7d7af8f98bd9309478a19682dd8b636e
+=======
+<<<<<<<< HEAD:Assets/AudioSamples.meta
+guid: 513318910e354ca4cab6fde205c67270
+>>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

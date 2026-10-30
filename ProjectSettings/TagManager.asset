@@ -10,6 +10,12 @@ TagManager:
   - Shrink
   - MovingPlatform
   - DoubleJump
+<<<<<<< Updated upstream
+=======
+  - Water
+  - Dancer
+  - Interactuable
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
