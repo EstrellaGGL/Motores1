@@ -12,6 +12,7 @@ TagManager:
   - DoubleJump
   - Water
   - Dancer
+  - Interactuable
   layers:
   - Default
   - TransparentFX

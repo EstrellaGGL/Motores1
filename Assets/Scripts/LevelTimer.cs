@@ -5,15 +5,19 @@ public class LevelTimer : MonoBehaviour
 {
     public float tiempoLimite = 60f;
 
+    public GameObject canvasTimer;
     public TextMeshProUGUI textoTiempo;
 
     private float tiempoRestante;
     private GameManager gameManager;
     private bool terminado = false;
+    private bool iniciado = false;
 
     private void Start()
     {
         tiempoRestante = tiempoLimite;
+
+        canvasTimer.SetActive(false);
 
         gameManager = FindFirstObjectByType<GameManager>();
 
@@ -22,7 +26,7 @@ public class LevelTimer : MonoBehaviour
 
     private void Update()
     {
-        if (terminado)
+        if (!iniciado || terminado)
             return;
 
         tiempoRestante -= Time.deltaTime;
@@ -40,6 +44,15 @@ public class LevelTimer : MonoBehaviour
         }
 
         ActualizarTexto();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Egg") && !iniciado)
+        {
+            iniciado = true;
+            canvasTimer.SetActive(true);
+        }
     }
 
     private void ActualizarTexto()
